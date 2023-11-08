@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+    font-size: 15px;
+    margin: 0;padding: 0;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+
+/* * * * * Main Colors * * * * */
+:root{
+    --Neutral_1: hsl(0, 0%, 95%); /*(background, headings, buttons)*/
+    --Neutral_2: hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
+
+    --Orange: hsl(31, 77%, 52%); /*Bright orange*/
+    --DarkCyan-1: hsl(184, 100%, 22%); /*Dark cyan*/
+    --DarkCyan-2: hsl(179, 100%, 13%); /*Very dark cyan*/
+}
+
+
+body{
+    background: var(--Neutral_1);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* * * * * Main SECTION * * * * */
+.cards{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border-radius: 10px;
+    transform: scale(.8);
+}
+
+
+/* * * * * Media Query For Mobile-Screen * * * * */
+@media (max-width: 700px){
+    body{
+        height: calc(500px*3 + 100px);
+    }
+    .cards{
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 50px 0;
+        transform: scale(1);
+    }
+}
+
+
+/* * * * * STYLE FOR MAIN CONTAINER * * * * */
+.card{
+    display: flex;
+    width: 300px;
+    height: 500px;
+    padding: 50px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.card:nth-child(1){background: var(--Orange);}
+.card:nth-child(2){background: var(--DarkCyan-1);}
+.card:nth-child(3){background: var(--DarkCyan-2);}
+
+
+/* * * * * STYLE FOR AVATAR * * * * */
+.card img{width: 60px}
+
+
+/* * * * * STYLE FOR HEADING * * * * */
+.card h1{
+    font-size: 35px;
+    color: var(--Neutral_1);
+    text-transform: uppercase;
+    font-family: 'Big Shoulders Display', sans-serif;
+}
+
+
+/* * * * * STYLE FOR PARAGRAPH * * * * */
+.card p{
+    color: var(--Neutral_2);
+    line-height: 25px;
+    height: 200px;
+}
+
+
+/* * * * * STYLE FOR BUTTONS * * * * */
+.card button{
+    width: 140px;
+    padding: 10px;
+    color: var(--Orange);
+    border-radius: 30px;
+    text-transform: capitalize;
+    background: var(--Neutral_1);
+    border: 2px solid var(--Neutral_1);
+}
+.card:nth-child(1) button{color: var(--Orange);}
+.card:nth-child(2) button{color: var(--DarkCyan-1);}
+.card:nth-child(3) button{color: var(--DarkCyan-2);}
+
+
+/* * * * * HOVER BUTTONS * * * * */
+.card button:hover{
+    transition: .5s ease-in-out;
+    background: transparent;
+    color: var(--Neutral_1);
+    cursor: pointer;
+}
