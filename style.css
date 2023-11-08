@@ -32,7 +32,6 @@ body{
     flex-direction: row;
     overflow: hidden;
     border-radius: 10px;
-    transform: scale(.6);
 }
 
 
@@ -48,7 +47,6 @@ body{
         align-items: center;
         flex-direction: column;
         margin: 50px 0;
-        transform: scale(1);
     }
 }
 
